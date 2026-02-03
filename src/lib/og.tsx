@@ -8,9 +8,11 @@ type OgOptions = {
   headline: string;
 };
 
-export function createOgImage({ eyebrow, headline }: OgOptions) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  const bottleUrl = `${siteUrl}/images/keikos-bottle.png`;
+export async function createOgImage({ eyebrow, headline }: OgOptions) {
+  const bottleResponse = await fetch(
+    new URL("../../public/images/keikos-bottle.png", import.meta.url),
+  );
+  const bottleData = await bottleResponse.arrayBuffer();
 
   return new ImageResponse(
     (
@@ -31,7 +33,7 @@ export function createOgImage({ eyebrow, headline }: OgOptions) {
       >
         {/* Bottle image - positioned bottom-right, extending off-frame */}
         <img
-          src={bottleUrl}
+          src={bottleData}
           alt=""
           style={{
             position: "absolute",

@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Sora } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import AgeGate from "@/components/AgeGate";
+import { Analytics } from "@vercel/analytics/react";
 
 const displayFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
