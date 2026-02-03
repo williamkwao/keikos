@@ -18,8 +18,18 @@ const bodyFont = Sora({
   variable: "--font-body",
 });
 
+function getBaseUrl() {
+  // Production (includes custom domain if assigned)
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL)
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  // Preview/branch deployments
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  // Local development
+  return "http://localhost:3000";
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://keikosrum.com"),
+  metadataBase: new URL(getBaseUrl()),
   title: {
     default: "Keikos Fine Reserve X.O.",
     template: "%s | Keikos Fine Reserve",
