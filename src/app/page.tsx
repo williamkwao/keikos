@@ -1,10 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { featureItems, storyItems } from "@/lib/lookbook";
+import { featureItems } from "@/lib/lookbook";
 import FeatureCard from "@/components/FeatureCard";
 
 export default function HomePage() {
-  const story = storyItems.slice(0, 3);
+  const craftHighlights = [
+    {
+      title: "Finest ingredients",
+      body: "Crafted from organically grown sugarcane juice for a clean, authentic foundation.",
+    },
+    {
+      title: "Made with care",
+      body: "Handcrafted in small batches by dedicated artisans for balance and exclusivity.",
+    },
+    {
+      title: "Aged to depth",
+      body: "Extended aging in oak builds rich layers of spice, wood, and warm finish.",
+    },
+  ];
 
   return (
     <div className="texture-overlay">
@@ -28,7 +41,7 @@ export default function HomePage() {
           <h1 className="relative z-10 font-display text-4xl leading-tight text-sand sm:text-5xl lg:text-6xl">
             The Caribbean reserve crafted{" "}
             <span className="relative inline-flex items-center">
-              <span className="lg:ml-0">for slow pours</span>
+              <span className="lg:ml-0">for slow pours </span>
             </span>
             and golden hours.
           </h1>
@@ -108,12 +121,10 @@ export default function HomePage() {
               spirit worthy of the long pour.
             </p>
             <div className="grid gap-4">
-              {story.map((item) => (
-                <div key={item.pageIndex} className="glass-panel rounded-2xl p-5">
-                  <p className="text-xs uppercase tracking-[0.3em] text-sand/60">Keikos Note</p>
-                  <p className="mt-3 text-sm text-sand/75">
-                    {item.body || "A Keikos campaign detail, refined and archived."}
-                  </p>
+              {craftHighlights.map((item) => (
+                <div key={item.title} className="glass-panel rounded-2xl p-5">
+                  <p className="mt-1 font-display text-lg text-sand">{item.title}</p>
+                  <p className="mt-3 text-sm text-sand/75">{item.body}</p>
                 </div>
               ))}
             </div>
