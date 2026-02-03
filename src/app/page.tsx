@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { featureItems } from "@/lib/lookbook";
 import FeatureCard from "@/components/FeatureCard";
+import HeroVideo from "@/components/HeroVideo";
 
 export const metadata: Metadata = {
   title: "Keikos Fine Reserve X.O.",
@@ -33,16 +34,11 @@ export default function HomePage() {
     <div className="texture-overlay">
       <section className="relative w-full overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <video
+          <HeroVideo
             className="h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-          >
-            <source src="/videos/keikos-hero.mp4" type="video/mp4" />
-          </video>
+            src="/videos/keikos-hero.mp4"
+            poster="/images/keikos-craft.jpg"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80 md:from-black/60 md:via-black/35 md:to-black/70" />
         </div>
         <div className="mx-auto grid max-w-6xl gap-6 px-6 pb-16 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4">
