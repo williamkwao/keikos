@@ -8,7 +8,21 @@ export default function HomePage() {
 
   return (
     <div className="texture-overlay">
-      <section className="relative mx-auto grid max-w-6xl gap-6 px-6 pb-16 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4">
+      <section className="relative w-full overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src="/videos/keikos-hero.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/70" />
+        </div>
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 pb-16 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4">
         <div className="relative space-y-8">
           <p className="text-xs uppercase tracking-[0.45em] text-sand/70">Keikos Fine Reserve</p>
           <h1 className="relative z-10 font-display text-4xl leading-tight text-sand sm:text-5xl lg:text-6xl">
@@ -65,6 +79,7 @@ export default function HomePage() {
               className="h-full w-auto object-contain drop-shadow-[0_35px_50px_rgba(0,0,0,0.55)]"
             />
           </div>
+        </div>
         </div>
       </section>
 
