@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { ImageResponse } from "next/og";
 
 export const ogSize = { width: 1200, height: 630 };
@@ -9,12 +10,9 @@ type OgOptions = {
 };
 
 export async function createOgImage({ eyebrow, headline }: OgOptions) {
-  const origin =
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-  const bottleResponse = await fetch(`${origin}/images/keikos-bottle.png`);
-  const bottleData = await bottleResponse.arrayBuffer();
-  const bottleBlob = new Blob([bottleData], { type: "image/png" });
+  const bottlePath = new URL("../../public/images/keikos-bottle.png", import.meta.url);
+  const bottleBuffer = await readFile(bottlePath);
+  const bottleSrc = `data:image/png;base64,${bottleBuffer.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -35,7 +33,7 @@ export async function createOgImage({ eyebrow, headline }: OgOptions) {
       >
         {/* Bottle image - positioned bottom-right, extending off-frame */}
         <img
-          src={bottleBlob}
+          src={bottleSrc}
           alt=""
           style={{
             position: "absolute",
