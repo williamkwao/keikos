@@ -9,9 +9,10 @@ type OgOptions = {
 };
 
 export async function createOgImage({ eyebrow, headline }: OgOptions) {
-  const bottleResponse = await fetch(
-    new URL("../../public/images/keikos-bottle.png", import.meta.url),
-  );
+  const origin =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  const bottleResponse = await fetch(`${origin}/images/keikos-bottle.png`);
   const bottleData = await bottleResponse.arrayBuffer();
 
   return new ImageResponse(
