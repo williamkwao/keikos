@@ -8,7 +8,15 @@ export type LookbookItem = {
   type: "cover" | "month" | "extra";
 };
 
-export const lookbookItems = items as LookbookItem[];
+const allItems = items as LookbookItem[];
+
+// Remove pure calendar grid pages from the gallery and use the manually cropped images.
+export const lookbookItems = allItems
+  .filter((item) => item.type !== "month")
+  .map((item) => ({
+    ...item,
+    image: item.image.replace("/calendar/", "/gallery/"),
+  }));
 
 export const heroItem = lookbookItems.find((item) => item.type === "cover") ?? lookbookItems[0];
 

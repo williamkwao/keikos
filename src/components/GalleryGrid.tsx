@@ -18,17 +18,7 @@ export default function GalleryGrid({ items }: { items: LookbookItem[] }) {
               className="h-auto w-full object-cover"
             />
           </div>
-          <div className="p-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-sand/60">Lookbook</p>
-            <h3 className="mt-2 font-display text-xl text-sand">
-              {item.title ?? "Keikos Fine Reserve"}
-            </h3>
-            <p className="mt-2 text-sm text-sand/70">
-              {item.type === "extra"
-                ? item.body || "A campaign note from the Keikos reserve."
-                : "A visual moment from the Keikos campaign."}
-            </p>
-          </div>
+          <div className="p-4" />
         </div>
       ))}
     </div>
