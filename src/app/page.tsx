@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { featureItems } from "@/lib/lookbook";
 import FeatureCard from "@/components/FeatureCard";
+
+export const metadata: Metadata = {
+  title: "Keikos Fine Reserve X.O.",
+  description:
+    "Discover Keikos Fine Reserve X.O., an artisanal Turks and Caicos rum aged in oak for a smooth, layered finish designed for slow pours and golden hours.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   const craftHighlights = [
@@ -33,7 +43,7 @@ export default function HomePage() {
           >
             <source src="/videos/keikos-hero.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80 md:from-black/60 md:via-black/35 md:to-black/70" />
         </div>
         <div className="mx-auto grid max-w-6xl gap-6 px-6 pb-16 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4">
         <div className="relative space-y-8">
@@ -41,8 +51,8 @@ export default function HomePage() {
           <h1 className="relative z-10 font-display text-4xl leading-tight text-sand sm:text-5xl lg:text-6xl">
             The Caribbean reserve crafted{" "}
             <span className="relative inline-flex items-center">
-              <span className="lg:ml-0">for slow pours </span>
-            </span>
+              <span className="lg:ml-0">for slow pours</span>
+            </span>{" "}
             and golden hours.
           </h1>
           <p className="max-w-xl text-base text-sand/75">
@@ -71,7 +81,7 @@ export default function HomePage() {
             </div>
             <div className="glass-panel rounded-2xl p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-sand/60">Origin</p>
-              <p className="mt-2 font-display text-2xl">Caribbean</p>
+              <p className="mt-2 font-display text-2xl">Turks &amp; Caicos</p>
             </div>
             <div className="glass-panel rounded-2xl p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-sand/60">Style</p>

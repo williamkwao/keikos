@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import GalleryStory from "@/components/GalleryStory";
 import { lookbookItems } from "@/lib/lookbook";
+
+export const metadata: Metadata = {
+  title: "Gallery",
+  description:
+    "Explore the Keikos Fine Reserve gallery — a visual story of the bottle, the ritual, and the slow luxury of a coastal pour.",
+  alternates: {
+    canonical: "/gallery",
+  },
+};
 
 export default function GalleryPage() {
   return (

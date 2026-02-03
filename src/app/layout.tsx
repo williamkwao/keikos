@@ -18,8 +18,26 @@ const bodyFont = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Keikos Fine Reserve",
-  description: "Keikos Fine Reserve rum, crafted in the Caribbean and aged with patience.",
+  metadataBase: new URL("https://keikosrum.com"),
+  title: {
+    default: "Keikos Fine Reserve X.O.",
+    template: "%s | Keikos Fine Reserve",
+  },
+  description:
+    "Keikos Fine Reserve X.O. is an artisanal rum from the Turks and Caicos Islands, crafted from organic sugarcane and aged in oak for depth and character.",
+  openGraph: {
+    title: "Keikos Fine Reserve X.O.",
+    description:
+      "An artisanal Turks and Caicos rum refined by time, defined by character, and aged in oak for a smooth, luxurious finish.",
+    type: "website",
+    siteName: "Keikos Fine Reserve",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keikos Fine Reserve X.O.",
+    description:
+      "An artisanal Turks and Caicos rum refined by time, defined by character, and aged in oak for a smooth, luxurious finish.",
+  },
 };
 
 export default function RootLayout({

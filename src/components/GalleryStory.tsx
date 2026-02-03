@@ -110,7 +110,7 @@ export default function GalleryStory({ items }: { items: LookbookItem[] }) {
                 className="object-contain"
               />
             </div>
-            <div className="flex h-[24vh] flex-col px-6 py-6 sm:px-10 lg:h-full lg:py-12">
+            <div className="flex h-[24vh] flex-col px-6 py-6 sm:px-10 lg:h-full lg:py-16">
               {splitQA(activeItem).title ? (
                 <h3 className="mt-3 font-display text-3xl text-sand">
                   {splitQA(activeItem).title}
