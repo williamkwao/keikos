@@ -14,6 +14,7 @@ export async function createOgImage({ eyebrow, headline }: OgOptions) {
     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
   const bottleResponse = await fetch(`${origin}/images/keikos-bottle.png`);
   const bottleData = await bottleResponse.arrayBuffer();
+  const bottleBlob = new Blob([bottleData], { type: "image/png" });
 
   return new ImageResponse(
     (
@@ -34,7 +35,7 @@ export async function createOgImage({ eyebrow, headline }: OgOptions) {
       >
         {/* Bottle image - positioned bottom-right, extending off-frame */}
         <img
-          src={bottleData}
+          src={bottleBlob}
           alt=""
           style={{
             position: "absolute",
