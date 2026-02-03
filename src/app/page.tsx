@@ -66,15 +66,15 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="relative order-first lg:-mt-12 lg:order-none lg:-ml-6">
-          <div className="absolute -inset-12 bg-[radial-gradient(circle_at_40%_20%,rgba(232,160,123,0.35),transparent_60%),radial-gradient(circle_at_70%_80%,rgba(244,231,210,0.18),transparent_55%)] blur-2xl" />
-          <div className="absolute inset-x-6 top-10 h-[70%] rounded-full bg-[radial-gradient(circle,rgba(255,236,200,0.25),transparent_70%)] blur-3xl" />
-          <div className="hero-bottle relative mx-auto flex h-[360px] items-end justify-center sm:h-[420px] lg:h-[600px]">
+        <div className="hidden lg:block" />
+        <div className="pointer-events-none absolute bottom-6 right-10 hidden lg:block">
+          <div className="absolute -inset-10 bg-[radial-gradient(circle_at_40%_20%,rgba(232,160,123,0.28),transparent_60%),radial-gradient(circle_at_70%_80%,rgba(244,231,210,0.16),transparent_55%)] blur-2xl" />
+          <div className="hero-bottle relative flex h-[300px] w-[230px] items-end justify-end">
             <Image
               src="/images/keikos-bottle.png"
               alt="Keikos Fine Reserve bottle"
-              width={520}
-              height={980}
+              width={300}
+              height={680}
               priority
               className="h-full w-auto object-contain drop-shadow-[0_35px_50px_rgba(0,0,0,0.55)]"
             />
