@@ -5,7 +5,7 @@ export const contentType = ogContentType;
 export const runtime = "nodejs";
 
 export default async function OpenGraphImage() {
-  return await createOgImage({
+  return createOgImage({
     eyebrow: "Keikos Fine Reserve",
     headline: "The Turks & Caicos reserve crafted for slow pours and golden hours.",
   });

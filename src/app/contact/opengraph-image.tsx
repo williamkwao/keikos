@@ -5,7 +5,7 @@ export const contentType = ogContentType;
 export const runtime = "nodejs";
 
 export default async function OpenGraphImage() {
-  return await createOgImage({
+  return createOgImage({
     eyebrow: "Contact",
     headline: "Reach the Keikos team for hospitality, retail, or private inquiries.",
   });
