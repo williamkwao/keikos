@@ -35,7 +35,7 @@ export default function HomePage() {
       <section className="relative w-full overflow-hidden">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <HeroVideo
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-[center_35%]"
             src="/videos/keikos-hero.mp4"
             poster="/images/keikos-craft.jpg"
           />
@@ -44,14 +44,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-6 px-6 pb-16 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4">
         <div className="relative space-y-8">
           <p className="text-xs uppercase tracking-[0.45em] text-sand/70">Keikos Fine Reserve</p>
-          <h1 className="relative z-10 font-display text-4xl leading-tight text-sand sm:text-5xl lg:text-6xl">
+          <h1 className="relative z-10 font-display text-3xl leading-tight text-sand sm:text-4xl lg:text-6xl">
             The Caribbean reserve crafted{" "}
             <span className="relative inline-flex items-center">
               <span className="lg:ml-0">for slow pours</span>
             </span>{" "}
             and golden hours.
           </h1>
-          <p className="max-w-xl text-base text-sand/75">
+          <p className="max-w-xl text-sm leading-relaxed text-sand/85 sm:text-base sm:leading-relaxed">
             Keikos Fine Reserve blends Caribbean sugarcane, French oak aging, and coastal
             air into a sipping rum designed for the long pour. Every bottle is a study in
             patience, warmth, and refined character.
@@ -70,18 +70,23 @@ export default function HomePage() {
               Explore Gallery
             </Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="glass-panel rounded-2xl p-4">
+          <div className="grid gap-3 sm:grid-cols-3">
+            <div className="glass-panel rounded-2xl px-4 py-3 text-[11px] uppercase tracking-[0.18em] text-sand/70 sm:hidden">
+              Aged <span className="text-sand">8-10 Years</span> · Origin{" "}
+              <span className="text-sand">Turks &amp; Caicos</span> · Style{" "}
+              <span className="text-sand">Fine Reserve</span>
+            </div>
+            <div className="glass-panel hidden rounded-2xl p-3 sm:block sm:p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-sand/60">Aged</p>
-              <p className="mt-2 font-display text-2xl">8-10 Years</p>
+              <p className="mt-2 font-display text-xl sm:text-2xl">8-10 Years</p>
             </div>
-            <div className="glass-panel rounded-2xl p-4">
+            <div className="glass-panel hidden rounded-2xl p-3 sm:block sm:p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-sand/60">Origin</p>
-              <p className="mt-2 font-display text-2xl">Turks &amp; Caicos</p>
+              <p className="mt-2 font-display text-xl sm:text-2xl">Turks &amp; Caicos</p>
             </div>
-            <div className="glass-panel rounded-2xl p-4">
+            <div className="glass-panel hidden rounded-2xl p-3 sm:block sm:p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-sand/60">Style</p>
-              <p className="mt-2 font-display text-2xl">Fine Reserve</p>
+              <p className="mt-2 font-display text-xl sm:text-2xl">Fine Reserve</p>
             </div>
           </div>
         </div>
@@ -102,18 +107,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="flex items-center justify-between">
+      <section className="mx-auto max-w-6xl px-6 pb-16 pt-4 sm:pt-8">
+        <div className="space-y-4">
           <h2 className="section-title text-2xl text-sand">Product Highlights</h2>
-          <Link href="/gallery" className="text-xs uppercase tracking-[0.3em] text-sand/60">
-            Full Gallery
-          </Link>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featureItems.map((item) => (
             <FeatureCard key={item.pageIndex} item={item} />
           ))}
         </div>
+        <Link
+          href="/gallery"
+          className="mt-6 inline-flex text-xs uppercase tracking-[0.3em] text-sand/60"
+        >
+          View Gallery
+        </Link>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
