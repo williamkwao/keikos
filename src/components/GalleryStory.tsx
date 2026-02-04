@@ -102,7 +102,7 @@ export default function GalleryStory({ items }: { items: LookbookItem[] }) {
             Close
           </button>
           <div className="grid h-full w-full gap-0 pt-16 lg:grid-cols-[1.35fr_0.65fr] lg:pt-0">
-            <div className="relative h-[52vh] w-full bg-ink/80 lg:h-full">
+            <div className="relative h-[60vh] w-full bg-ink/80 lg:h-full">
               <Image
                 src={activeItem.image}
                 alt={activeItem.title ?? "Keikos Fine Reserve"}
@@ -110,7 +110,7 @@ export default function GalleryStory({ items }: { items: LookbookItem[] }) {
                 className="object-contain"
               />
             </div>
-            <div className="flex h-[24vh] flex-col px-6 py-6 sm:px-10 lg:h-full lg:py-16">
+            <div className="flex h-[36vh] flex-col px-6 py-6 pb-4 sm:px-10 lg:h-full lg:py-16">
               {splitQA(activeItem).title ? (
                 <h3 className="mt-3 font-display text-3xl text-sand">
                   {splitQA(activeItem).title}
